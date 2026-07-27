@@ -44,17 +44,26 @@
 # Topic: Lists (Arrays), Loops, and Functions
 # =============================================================================
 
+# =============================================================================
+# PROGRAMMING FUNDAMENTALS — Assignment 3
+# Topic: Lists (Arrays), Loops, and Functions
+# =============================================================================
+#
+# TASK: Array Statistics Calculator
+#
+# Write a Python program that reads a collection of numbers from the user
+# and computes key statistical values using separate functions.
+#
+
 def read_numbers(n):
-    
     numbers = []
     for i in range(n):
-        value = float(input(f"Enter number {i + 1}: "))
+        value = int(input(f"Enter number {i + 1}: "))
         numbers.append(value)
     return numbers
 
 
 def calculate_sum(numbers):
-    
     total = 0
     for num in numbers:
         total += num
@@ -62,13 +71,11 @@ def calculate_sum(numbers):
 
 
 def calculate_average(numbers):
-   
     total = calculate_sum(numbers)
     return total / len(numbers)
 
 
 def calculate_max(numbers):
-    
     largest = numbers[0]
     for num in numbers:
         if num > largest:
@@ -77,7 +84,6 @@ def calculate_max(numbers):
 
 
 def calculate_min(numbers):
-    
     smallest = numbers[0]
     for num in numbers:
         if num < smallest:
@@ -100,11 +106,11 @@ def main():
     minimum = calculate_min(numbers)
 
     print("\nResults:")
-    print(f"Sum:     {total:g}")
-    print(f"Average: {average:g}")
-    print(f"Maximum: {maximum:g}")
-    print(f"Minimum: {minimum:g}")
+    print(f"Sum:     {total}")
+    print(f"Average: {average}")
+    print(f"Maximum: {maximum}")
+    print(f"Minimum: {minimum}")
 
 
-if __name__ == "__main__":
+if __name__ == " main ":
     main()
