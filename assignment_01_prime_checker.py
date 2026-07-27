@@ -39,7 +39,7 @@
 
 def primeNum(num):
     if num<=1:
-        print(f"{numb}its not a prime number")
+        print(f"{num}its not a prime number")
     elif num % 2 !=0:
         print(f"{num}is a prime number")
     else:
