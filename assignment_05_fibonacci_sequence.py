@@ -50,3 +50,54 @@
 # =============================================================================
 
 
+# =============================================================================
+# PROGRAMMING FUNDAMENTALS — Assignment 5
+# Topic: Loops, Sequences, and Functions
+# =============================================================================
+#
+# TASK: Fibonacci Sequence Generator
+#
+
+def print_fibonacci_terms(n):
+
+    a, b = 0, 1
+    terms = []
+    for i in range(n):
+        terms.append(a)
+        a, b = b, a + b
+
+    print("Fibonacci sequence:", " ".join(str(term) for term in terms))
+
+
+def is_fibonacci_number(num):
+    
+    if num < 0:
+        return False
+
+    a, b = 0, 1
+    while a <= num:
+        if a == num:
+            return True
+        a, b = b, a + b
+
+    return False
+
+
+def main():
+    n = int(input("How many terms? "))
+
+    if n <= 0:
+        print("Error: N must be a positive integer.")
+    else:
+        print_fibonacci_terms(n)
+
+    num = int(input("Enter a number to check: "))
+
+    if is_fibonacci_number(num):
+        print(f"{num} is a Fibonacci number.")
+    else:
+        print(f"{num} is NOT a Fibonacci number.")
+
+
+if __name__ == "__main__":
+    main()
