@@ -117,9 +117,7 @@ def add_matrices(A, B):
     return result
 
 
-# =============================================================================
-# PART C - MULTIPLICATION
-# =============================================================================
+# =====
 def multiply_matrices(A, B):
     rowsA = len(A)
     colsA = len(A[0])
@@ -137,7 +135,6 @@ def multiply_matrices(A, B):
         result.append(row)
 
     return result
-
 
 
 rows = int(input("Enter number of rows: "))
