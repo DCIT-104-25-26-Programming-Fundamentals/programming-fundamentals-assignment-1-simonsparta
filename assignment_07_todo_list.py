@@ -95,7 +95,7 @@ def add_task():
     print(f'Task added: "{task}"')
 
 
-# Function to view tasks
+
 def view_tasks():
     if len(tasks) == 0:
         print("Your to-do list is empty.")

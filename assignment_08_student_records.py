@@ -90,3 +90,115 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+# =============================================================================
+# PROGRAMMING FUNDAMENTALS — Assignment 8
+# Topic: Lists of Dictionaries, Loops, and Functions
+# =============================================================================
+# TASK: Student Record Management System
+
+students = []  # this will hold all our student dictionaries
+
+
+def add_student():
+    name = input("Student name: ")
+    student_id = int(input("Student ID: "))
+
+    num_scores = int(input("How many scores? "))
+    scores = []
+
+    for i in range(num_scores):
+        score = int(input("Enter score " + str(i + 1) + ": "))
+        scores.append(score)
+
+    # build the dictionary for this student
+    new_student = {
+        "name": name,
+        "id": student_id,
+        "scores": scores
+    }
+
+    students.append(new_student)
+    print("Student \"" + name + "\" added successfully.")
+
+
+def get_average(scores):
+    # add everything up then divide, nothing fancy
+    total = 0
+    for s in scores:
+        total = total + s
+
+    avg = total / len(scores)
+    return round(avg, 2)
+
+
+def display_all_students():
+    if len(students) == 0:
+        print("No students have been added yet.")
+        return
+
+    print("-" * 50)
+    print("Name           ID          Scores         Average")
+    print("-" * 50)
+
+    for student in students:
+        scores_text = ""
+        for i in range(len(student["scores"])):
+            scores_text += str(student["scores"][i])
+            if i != len(student["scores"]) - 1:
+                scores_text += ", "
+
+        avg = get_average(student["scores"])
+
+        print("{:<15}{:<12}{:<15}{}".format(
+            student["name"], student["id"], scores_text, avg
+        ))
+
+    print("-" * 50)
+
+
+def find_average_by_id():
+    search_id = int(input("Enter student ID: "))
+    found = False
+
+    for student in students:
+        if student["id"] == search_id:
+            avg = get_average(student["scores"])
+            print(student["name"] + "'s average score: " + str(avg))
+            found = True
+            break
+
+    if not found:
+        print("Error: no student found with that ID.")
+
+
+def show_menu():
+    print("================================")
+    print("   STUDENT RECORD SYSTEM MENU")
+    print("================================")
+    print("1. Add student")
+    print("2. Display all students")
+    print("3. Calculate average score")
+    print("4. Quit")
+
+
+def main():
+    while True:
+        show_menu()
+        choice = input("Enter your choice (1-4): ")
+
+        if choice == "1":
+            add_student()
+        elif choice == "2":
+            display_all_students()
+        elif choice == "3":
+            find_average_by_id()
+        elif choice == "4":
+            print("Goodbye!")
+            break
+        else:
+            print("Please enter a number between 1 and 4.")
+
+        print()  # just a blank line to separate each round
+
+
+main()
