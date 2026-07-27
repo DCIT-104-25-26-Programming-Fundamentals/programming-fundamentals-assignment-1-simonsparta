@@ -3,7 +3,7 @@
 # Topic: Loops and Functions
 # =============================================================================
 #
-# TASK: Multiplication Table Generator
+# TASK:'' Multiplication Table Generator''
 #
 # Write a Python program that generates multiplication tables using loops
 # and functions.
