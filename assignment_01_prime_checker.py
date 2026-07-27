@@ -33,5 +33,19 @@
 
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
-# =============================================================================
+#=============================================================================
+
+#assignment1
+
+def primeNum(num):
+    if num<=1:
+        print(f"{numb}its not a prime number")
+    elif num % 2 !=0:
+        print(f"{num}is a prime number")
+    else:
+        print (f"{num}is not a prime number"  )
+
+
+
+    
 
